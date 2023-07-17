@@ -1,6 +1,7 @@
 import React from "react";
-
-const home = () => {
+import Notes from "./Notes";
+const Home = () => {
+  
   return (
     <div>
       <div className="container my-3">
@@ -45,11 +46,9 @@ const home = () => {
           </button>
         </form>
       </div>
-      <div className="container my-3">
-        <h2>Your notes</h2>
-      </div>
+      <Notes/>
     </div>
   );
 };
 
-export default home;
+export default Home;
