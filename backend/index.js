@@ -15,5 +15,5 @@ app.use("/api/auth", require("./routes/auth"));
 app.use("/api/notes", require("./routes/notes"));
 
 app.listen(port, () => {
-  console.log(`Example app listening on port http://127.0.0.1:${port}`);
+  console.log(`botenook backend listening on port http://127.0.0.1:${port}`);
 });
