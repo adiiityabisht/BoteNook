@@ -1,12 +1,13 @@
-const connectToMongo = require("./db"); // Importing the function to connect to MongoDB
+const connectToMongo = require("./db");
+const express = require("express"); // Move this line here
+var cors = require("cors");
 
-connectToMongo(); // Connecting to MongoDB
+connectToMongo();
+const app = express(); // Now initialize express after requiring it
 
-const express = require("express");
-const app = express();
 const port = 5000;
-
-app.use(express.json()); // Middleware to parse JSON data in requests
+app.use(cors());
+app.use(express.json());
 
 // Routing middleware for authentication-related routes
 app.use("/api/auth", require("./routes/auth"));
