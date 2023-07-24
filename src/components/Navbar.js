@@ -1,14 +1,24 @@
-import {React} from "react";
-import { Link, useLocation} from "react-router-dom";
+import React from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-   let location = useLocation();
+  let Navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem('token')
+    Navigate("/login")
+  }
+  // useLocation hook is used to access the current location object, which contains information about the current URL
+  let location = useLocation();
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
+        {/* The brand link that points to the homepage ("/") */}
         <Link className="navbar-brand" to="/">
           botenook
         </Link>
+
+        {/* The button to toggle the navigation menu for smaller screens */}
         <button
           className="navbar-toggler"
           type="button"
@@ -20,8 +30,11 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+
+        {/* The collapsible navigation menu */}
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            {/* Navigation item for the "Home" link */}
             <li className="nav-item">
               <Link
                 className={`nav-link ${
@@ -33,6 +46,8 @@ const Navbar = () => {
                 Home
               </Link>
             </li>
+
+            {/* Navigation item for the "About" link */}
             <li className="nav-item">
               <Link
                 className={`nav-link ${
@@ -40,21 +55,27 @@ const Navbar = () => {
                 }`}
                 to="/about"
               >
-                about
+                About
               </Link>
             </li>
           </ul>
-          <form className="d-flex" role="search">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
+          {!localStorage.getItem("token") ? (
+            <form className="d-flex">
+              {/* "Login" button that redirects to the "/login" page */}
+              <Link className="btn btn-primary mx-1" to="/login" role="button">
+                Login
+              </Link>
+
+              {/* "Signup" button that redirects to the "/signup" page */}
+              <Link className="btn btn-primary mx-1" to="/signup" role="button">
+                Signup
+              </Link>
+            </form>
+          ) : (
+            <button className="btn btn-primary" onClick={handleLogout}>
+              Logout
             </button>
-          </form>
+          )}
         </div>
       </div>
     </nav>
