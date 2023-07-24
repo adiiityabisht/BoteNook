@@ -33,25 +33,26 @@ Welcome to **BoteNook**, a feature-rich application that empowers users to effor
 - **JSON Web Token (JWT)**: [https://jwt.io/](https://jwt.io/)
 - **React Router DOM**: [https://reactrouter.com/web/guides/quick-start](https://reactrouter.com/web/guides/quick-start)
 - **ContextAPI**: [https://reactjs.org/docs/context.html](https://reactjs.org/docs/context.html)
-- ... (other dependencies and packages)
 
 ## Installation
-To run the **BoteNook** application locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/botenook.git`
+To run the **BoteNook** application locally, you can use `npm run both` to start both the frontend and backend together using `concurrently`.
+
+1. Clone the repository: `git clone https://github.com/adiiityabisht/botenook.git`
 2. Navigate to the project directory: `cd botenook`
-3. Install dependencies: `npm install`
-4. Start the server: `npm run start-server`
-5. Start the client: `npm run start-client`
+3. Install dependencies for both frontend and backend: `npm install`
+4. Start both frontend and backend together: `npm run both`
+
+The frontend (React app) and backend (Node.js and Express app) will be running concurrently.
+
+Now you can access the app by visiting `http://localhost:3000` in your favorite web browser and start managing your notes securely! 📝💻
+
 
 ## Usage
 1. Open your favorite web browser and visit `http://localhost:3000`.
 2. Sign up for a new account or log in if you already have one.
 3. Create, edit, and organize your notes effortlessly.
 4. Enjoy a **secure and user-friendly** note management experience!
-
-## Demo
-Check out the **live demo** of the BoteNook application: [https://your-app-demo-url.com](https://your-app-demo-url.com)
 
 ## Contributing
 **Contributions are welcome!** If you encounter any issues or have suggestions for improvements, please feel free to create a pull request or submit an issue. Let's make BoteNook even better together! 🤝
